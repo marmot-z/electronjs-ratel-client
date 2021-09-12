@@ -141,7 +141,6 @@
     }
 
     window.onload = function() {
-        defaultSite.render();
         loadServerList();
     };
 } (this, this.Utils));

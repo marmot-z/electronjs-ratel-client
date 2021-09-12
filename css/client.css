@@ -32,9 +32,24 @@ input:focus  {
     font-size: 15px
 }
 
+#bar {
+    width: 100%;
+}
+
+#bar > pre {
+    font-size: 10pt;
+    font-family: Monospace; 
+    white-space: pre; 
+    float: left;
+    background-color: black;
+    color: whitesmoke;
+}
+
 #content {
-    width: 1100px;
-    height: calc(100vh - 120px);;
+    width: 100%;
+    /* height: calc(100vh - 120px); */
+    background-color: black;
+    color: whitesmoke;
     overflow-y: auto;
     word-wrap:break-word;
 }

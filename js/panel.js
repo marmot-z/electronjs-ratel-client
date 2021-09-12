@@ -6,12 +6,7 @@
         this.terminalDiv = document.querySelector("#terminal");
         this.contentDiv = document.querySelector("#content");
         this.inputBox = document.querySelector("#input");
-
-        Toggleable.call(this, document.querySelector("#console"));
-        Toggleable.prototype.triggerBy.call(this, "keyup", togglePredicate);
     }
-
-    Utils.extend(Panel, Toggleable);
 
     var prefix = '<div id="prefix" style="overflow:hidden;width:100%"><i class="fa fa-angle-right" aria-hidden="true" style="padding-right:5px;color:#2162ac"></i>';
 
