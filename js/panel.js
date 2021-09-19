@@ -3,12 +3,9 @@
 
     function Panel() {
         this.eventWrapper = new EventWrapper();
-        this.terminalDiv = document.querySelector("#terminal");
         this.contentDiv = document.querySelector("#content");
         this.inputBox = document.querySelector("#input");
     }
-
-    var prefix = '<div id="prefix" style="overflow:hidden;width:100%"><i class="fa fa-angle-right" aria-hidden="true" style="padding-right:5px;color:#2162ac"></i>';
 
     Panel.prototype.append = function(str) {
         var split = str.split("\n");
@@ -29,7 +26,7 @@
                     if (Utils.isEmpty(val)) return;
 
                     resolve(val);
-                    this.append(prefix + val + '</div>');
+                    this.append('<span>&gt;</span> ' + val);
                     this.eventWrapper.removeEventListener(this.inputBox, "keypress");
                     this.inputBox.value = "";
                 }

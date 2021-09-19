@@ -5,7 +5,6 @@
         "https://raw.githubusercontent.com/ainilili/ratel/master/serverlist.json",
     ];
     var existingServerList = [
-        "47.103.16.48:1024:Demo[V1.2.7]",
         "121.5.140.133:1024:Nico[v1.2.7]"
     ];
 
@@ -140,7 +139,15 @@
         return window.wsClient.init();
     }
 
+    function alwaysFocus() {
+        var html = document.querySelector('html');
+        html.addEventListener('click', function() {
+            document.querySelector('#input').focus();
+        });
+    }
+
     window.onload = function() {
+        alwaysFocus();
         loadServerList();
     };
 } (this, this.Utils));

@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet" href="css/client.css">
-    <link type="text/css" rel="stylesheet" href="css/console.css">
 </head>
 <body>
-    <div id="console">
-        <div id="terminal">
-            <div id="bar">
+    <div class="console">
+        <div id="content">
+            <div class="bar">
                 <pre contenteditable="true">
-
-                    __         .__           .__  .__               __                  
-                    ____________ _/  |_  ____ |  |     ____ |  | |__| ____   _____/  |_ 
-                    \_  __ \__  \\   __\/ __ \|  |   _/ ___\|  | |  |/ __ \ /    \   __\
-                     |  | \// __ \|  | \  ___/|  |__ \  \___|  |_|  \  ___/|   |  \  |  
-                     |__|  (____  /__|  \___  >____/  \___  >____/__|\___  >___|  /__|  
-                                \/          \/            \/             \/     \/      (v1.0.0 build by electronjs)
+            _          _         _  _               _
+            | |        | |       | |(_)             | |
+_ __   __ _ | |_   ___ | |   ___ | | _   ___  _ __  | |_
+| '__| / _` || __| / _ \| |  / __|| || | / _ \| '_ \ | __|
+| |   | (_| || |_ |  __/| | | (__ | || ||  __/| | | || |_
+|_|    \__,_| \__| \___||_|  \___||_||_| \___||_| |_| \__| (v1.0.0)
                 </pre>
             </div>
-            <div id="content">
-                <span>Welcome ratel websocket client.</span></br>
-                Select ratel server(select existing server or input your customize server address).</br>
-            </div>
-            <div id="prefix"><i class="fa fa-angle-right" aria-hidden="true" style='color:#2877d2;font-weight:bold'></i></div>
-            <input id="input" type="text"/>
+        </div>
+        <div>
+            <span>&gt;</span>
+            <input type="text" id="input" tabindex="-1"/>
         </div>
     </div>
 </body>
@@ -37,5 +33,5 @@
 <script type="text/javascript" src="js/eventWrapper.js"></script>
 <script type="text/javascript" src="js/panel.js"></script>
 <script type="text/javascript" src="js/wsClient.js"></script>
-<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>

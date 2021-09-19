@@ -1,0 +1,22 @@
+{
+  "name": "electronjs-ratel-client",
+  "version": "1.0.0-alpha",
+  "description": "A ratel client base on Electron JS",
+  "main": "start.js",
+  "scripts": {
+    "start": "electron .",
+    "build:windows": "electron-builder -w",
+    "build:mac": "electron-builder -m"
+  },
+  "repository": "https://github.com/marmot-z/electronjs-ratel-client",
+  "keywords": [
+    "Electron",
+    "ratel"
+  ],
+  "author": "zhangxunwei",
+  "license": "Apache License 2.0",
+  "devDependencies": {
+    "electron": "^14.0.1",
+    "electron-builder": "^22.11.7"
+  }
+}

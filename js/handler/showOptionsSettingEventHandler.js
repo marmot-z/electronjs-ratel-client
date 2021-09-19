@@ -13,7 +13,7 @@
             "3. Text Only with types\n" +
             "4. Text Only without types\n" +
             "5. Unicode Cards\n" +
-            "Please select an option above (enter [BACK] to return to options list)";
+            "Please select an option above (enter [back|b] to return to options list)";
 
     ShowOptionsSettingEventHandler.prototype.handle = function(client, panel, clientTransferData) {
         panel.append(tips);
@@ -24,17 +24,13 @@
     function inputResolve(client, panel, s) {
         var i = s.toLowerCase();
 
-        if (i == "back") {
+        if (i == "back" || i == "b") {
             client.dispatch({code: ClientEventCodes.CODE_SHOW_OPTIONS, data: null, info: null});
             return;
         }
 
-        try {
-            i = parseInt(s);
-            if (Number.isNaN(i)) {
-                throw new Error(s + " is not a number.")
-            }
-        } catch (e) {
+        i = parseInt(s);
+        if (Number.isNaN(i)) {
             panel.append("Invalid option, please choose again：");
             panel.waitInput().then((s) => inputResolve(client, panel, s));
         }

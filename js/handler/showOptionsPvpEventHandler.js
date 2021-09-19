@@ -47,24 +47,25 @@
             panel.waitInput()
                 .then(str => joinRoomResolve(client, panel, str));
         } else if (i == 4) {
-            panel.append("Please enter the room id you want to spectate (enter [back] to return to options list)");
+            panel.append("Please enter the room id you want to spectate (enter [back|b] to return to options list)");
             panel.waitInput()
                 .then(str => watchResolve(client, panel, str));
         }
     }
 
     function joinRoomResolve(client, panel, s) {
-        try {
-            var j = parseInt(s);
-            if (Number.isNaN(j)) {
-                throw new Error(s + " is not a number.")
-            }
-        } catch (ex) {
+        if (s == "back" || s == "b") {
+            client.dispatch({code: ClientEventCodes.CODE_SHOW_OPTIONS, data: null, info: null});
+            return;
+        }
+
+        var i = parseInt(s);
+        if (Number.isNaN(i)) {
             panel.append("Invalid option, please choose again：");
             panel.waitInput().then((s) => joinRoomResolve(client, panel, s));
         }
 
-        if (j < 1) {
+        if (i < 1) {
             panel.append("Invalid option, please choose again：");
             panel.waitInput().then((s) => joinRoomResolve(client, panel, s));
         } else {
@@ -73,12 +74,13 @@
     }
 
     function watchResolve(client, panel, s) {
-        try {
-            var i = parseInt(s);
-            if (Number.isNaN(i)) {
-                throw new Error(s + " is not a number.")
-            }
-        } catch (e) {
+        if (s == "back" || s == "b") {
+            client.dispatch({code: ClientEventCodes.CODE_SHOW_OPTIONS, data: null, info: null});
+            return;
+        }
+
+        var i = parseInt(s);
+        if (Number.isNaN(i)) {
             panel.append("Invalid option, please choose again：");
             panel.waitInput().then((s) => watchResolve(client, panel, s));
         }
